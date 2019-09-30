@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { animated, config, useTransition } from "react-spring";
 import HamburgerToggler from "./HamburgerToggler";
 import NavLinks from "./NavLinks";
-import { animated, config, useTransition } from "react-spring";
-import Theme from "../../styles/Theme";
+import {Theme} from '../../styles/index';
+
 const { colors } = Theme;
+
+
+
 const MenuContainer = styled.div`
   width: 100vw;
   height: 100vh;

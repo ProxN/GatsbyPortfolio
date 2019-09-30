@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 import Theme from "./Theme"
-const { fontSizes, colors } = Theme
+const { fontSizes, colors } = Theme;
 
 const GlobalStyle = createGlobalStyle`
 
@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
         padding:0;
         box-sizing:inherit;
     }
+    
     body{
         line-height:1.3;
         background-color:${colors.darkPrimary};
@@ -61,7 +62,8 @@ const GlobalStyle = createGlobalStyle`
   @media (max-width: 30em) {
     font-size: 13px;
   }
-    }
+
+ }
 `
 
 export default GlobalStyle

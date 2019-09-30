@@ -1,7 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import Section from "../styles/Section"
-import Heading from "../styles/Heading"
+import Proptypes  from 'prop-types';
+import {Heading,Section} from "../styles/index";
+
+
+
 const AboutContainer = styled(Section)`
   position: relative;
 `
@@ -40,11 +43,9 @@ const TechName = styled.span`
 function About({ data }) {
   const { frontmatter, html } = data[0].node
   const { title, stack } = frontmatter
-  console.log(html)
   return (
-    <AboutContainer>
+    <AboutContainer id='#about'>
       <Heading dangerouslySetInnerHTML={{ __html: title }}></Heading>
-
       <ContentContainer>
         <InfoContainer>
           <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -57,6 +58,10 @@ function About({ data }) {
       </ContentContainer>
     </AboutContainer>
   )
+}
+
+About.prototype = {
+  data: Proptypes.array.isRequired
 }
 
 export default About

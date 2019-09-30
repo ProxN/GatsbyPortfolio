@@ -1,10 +1,11 @@
 import React from "react";
-import Section from "../styles/Section";
 import styled from "styled-components";
-import Theme from "../styles/Theme";
 import { useSpring, animated,config} from "react-spring";
-import Button from '../styles/Button';
+import {Theme,Button,Section} from "../styles/index";
 const { fontSizes, colors } = Theme;
+
+
+
 
 
 const HeroContainer = styled(Section)`

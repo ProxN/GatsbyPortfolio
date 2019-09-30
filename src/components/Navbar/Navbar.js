@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { Helmet } from "react-helmet";
 import MenuDesktop from "./MenuDesktop";
 import MenuMobile from "./MenuMobile";
-import mixins from "../../styles/Mixins";
-import { Helmet } from "react-helmet";
+import {Mixins} from "../../styles/index";
+
 
 const NavbarContainer = styled.header`
   width: 100%;
@@ -13,7 +14,7 @@ const NavbarContainer = styled.header`
 const NavWrapper = styled.div`
   padding: 0 50px;
   height: 100%;
-  ${mixins.flexBetween};
+  ${Mixins.flexBetween};
 
   @media (max-width: 40em) {
     padding: 0 20px;

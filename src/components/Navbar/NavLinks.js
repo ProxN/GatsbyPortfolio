@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { useTrail, animated } from "react-spring";
-import Theme from '../../styles/Theme';
-import mixins from '../../styles/Mixins';
+import {Theme,Mixins} from '../../styles/index';
 import config from '../../config/config';
+
 const {fontSizes,colors} = Theme;
 
 
@@ -16,7 +16,7 @@ const LinksContainer = styled.div`
 const NavList = styled.ul`
   list-style: none;
   overflow: hidden;
-  ${mixins.flexBetween};
+  ${Mixins.flexBetween};
   width: 100%;
   @media (max-width: 40em) {
     flex-direction: column;

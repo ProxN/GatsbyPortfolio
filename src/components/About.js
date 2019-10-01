@@ -41,8 +41,8 @@ const TechName = styled.span`
 
 `;
 function About({ data }) {
-  const { frontmatter, html } = data[0].node
-  const { title, stack } = frontmatter
+  const { frontmatter, html } = data[0].node;
+  const { title, stack } = frontmatter;
   return (
     <AboutContainer id='#about'>
       <Heading dangerouslySetInnerHTML={{ __html: title }}></Heading>

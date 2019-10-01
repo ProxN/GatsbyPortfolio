@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import { Main, Mixins } from "../styles/index";
 import { Layout, Hero, About } from "../components/Index";
+import Projects from "../components/Projects";
 
 
 const MainContainer = styled(Main)`
@@ -12,11 +13,13 @@ const MainContainer = styled(Main)`
 `;
 
 const IndexPage = ({ data }) => {
+  
   return (
     <Layout>
       <MainContainer>
         <Hero />
         <About data={data.about.edges} />
+        <Projects data={data.portfolio.edges} />
       </MainContainer>
     </Layout>
   );
@@ -36,6 +39,26 @@ export const pageQuery = graphql`
           frontmatter {
             stack
             title
+          }
+          html
+        }
+      }
+    }
+    portfolio: allMarkdownRemark(filter:{fileAbsolutePath: {regex: "/portfolio/"}}){
+      edges {
+        node {
+          frontmatter {
+            stack
+            title
+            demo
+            source
+            image {
+              childImageSharp {
+                fluid(maxWidth: 700, quality: 90, traceSVG: { color: "#232342" }) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
           }
           html
         }

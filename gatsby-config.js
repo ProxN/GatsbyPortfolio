@@ -10,8 +10,6 @@ module.exports = {
   plugins:[
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve:`gatsby-plugin-manifest`,
       options:{
@@ -32,6 +30,8 @@ module.exports = {
         path: `${__dirname}/src/content/`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {

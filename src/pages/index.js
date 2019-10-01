@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import { Main, Mixins } from "../styles/index";
-import { Layout, Hero, About } from "../components/Index";
+import { Layout, Hero, About,Contact } from "../components/Index";
 import Projects from "../components/Projects";
 
 
@@ -13,13 +13,14 @@ const MainContainer = styled(Main)`
 `;
 
 const IndexPage = ({ data }) => {
-  
+  console.log(data);
   return (
     <Layout>
       <MainContainer>
         <Hero />
         <About data={data.about.edges} />
         <Projects data={data.portfolio.edges} />
+        <Contact data={data.contact.edges} />
       </MainContainer>
     </Layout>
   );
@@ -64,5 +65,17 @@ export const pageQuery = graphql`
         }
       }
     }
+    contact: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/contact/" }}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            email
+          }
+          html
+        }
+      }
+    }
+
   }
 `;

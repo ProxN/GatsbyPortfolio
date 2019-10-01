@@ -5,6 +5,7 @@ import Main from './Main';
 import Mixins from './Mixins';
 import Section from './Section';
 import Theme from './Theme';
+import media from './media';
 
 
 export {
@@ -14,5 +15,6 @@ export {
     Main,
     Mixins,
     Section,
-    Theme
+    Theme,
+    media
 }

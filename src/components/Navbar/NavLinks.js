@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useTrail, animated } from "react-spring";
-import {Theme,Mixins} from '../../styles/index';
+import {Theme,Mixins,media} from '../../styles/index';
 import config from '../../config/config';
 
 const {fontSizes,colors} = Theme;
@@ -18,18 +18,19 @@ const NavList = styled.ul`
   overflow: hidden;
   ${Mixins.flexBetween};
   width: 100%;
-  @media (max-width: 40em) {
+  ${media.tablet`
     flex-direction: column;
     justify-content: center;
-  }
+  `};
+
 `;
 const NavItem = styled(animated.div)`
   font-size: ${fontSizes.xsmal};
   margin: 0 10px;
-  @media (max-width: 40em) {
+  ${media.tablet`
     font-size: 18px;
     margin:5px 0;
-  }
+  `}
 `;
 const NavLink = styled.a`
   text-transform: uppercase;

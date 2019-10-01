@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import media from './media';
 
 const Heading = styled.h2`
 font-size: 30px;
@@ -32,12 +32,9 @@ span {
   border-right: 1px solid #ff6b6b;
   border-bottom: 1px solid #ff6b6b;
 }
-@media (max-width: 23.5em) {
-  font-size: 20px;
-}
-@media (max-width: 20.62em) {
-  font-size: 15px;
-}
+  ${media.phone`font-size:20px`};
+  ${media.tiny`font-size:15px`};
+
 `;
 
 

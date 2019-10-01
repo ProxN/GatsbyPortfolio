@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import MenuDesktop from "./MenuDesktop";
 import MenuMobile from "./MenuMobile";
-import {Mixins} from "../../styles/index";
+import {Mixins,media} from "../../styles/index";
 
 
 const NavbarContainer = styled.header`
@@ -15,10 +15,7 @@ const NavWrapper = styled.div`
   padding: 0 50px;
   height: 100%;
   ${Mixins.flexBetween};
-
-  @media (max-width: 40em) {
-    padding: 0 20px;
-  }
+  ${media.tablet`padding 0 20px;`};
 `;
 
 function Navbar() {

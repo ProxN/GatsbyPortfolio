@@ -30,9 +30,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   {
-    about: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/about/" } }
-    ) {
+    about: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/about/" }}) {
       edges {
         node {
           frontmatter {

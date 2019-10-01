@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { animated, config, useTransition } from "react-spring";
 import HamburgerToggler from "./HamburgerToggler";
 import NavLinks from "./NavLinks";
-import {Theme} from '../../styles/index';
+import {Theme,media} from '../../styles/index';
 
 const { colors } = Theme;
 
@@ -29,12 +29,9 @@ const SideDrawer = styled(animated.div)`
   right: 0;
   margin-left: auto;
   box-shadow: -10px 0px 30px -20px rgb(17, 17, 22);
-  @media (max-width: 40em) {
-    width: 50vw;
-  }
-  @media (max-width: 30em) {
-    width: 75vw;
-  }
+  ${media.tablet`width:50vw;`};
+  ${media.phablet`width:75vw;`};
+
 `;
 
 function MenuMobile({ menuOpen, toggleMenu }) {

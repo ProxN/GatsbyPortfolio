@@ -1,5 +1,6 @@
-import { createGlobalStyle } from "styled-components"
-import Theme from "./Theme"
+import { createGlobalStyle } from "styled-components";
+import Theme from './Theme';
+import media from './media';
 const { fontSizes, colors } = Theme;
 
 const GlobalStyle = createGlobalStyle`
@@ -45,25 +46,23 @@ const GlobalStyle = createGlobalStyle`
     }
     p{
         font-family: "Fira Sans", sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  font-weight: 400;
-  word-spacing: 1px;
-  color: #d2d2e7;
-  opacity: 0.9;
-  margin-bottom: 15px;
-  span {
-    color: #ff6b6b;
-    font-weight: 700;
-  }
-  @media (max-width: 37.5em) {
-    font-size: 14px;
-  }
-  @media (max-width: 30em) {
-    font-size: 13px;
-  }
+        font-size: ${fontSizes.medium};
+        line-height: 1.7;
+        font-weight: 400;
+        word-spacing: 1px;
+        color: ${colors.lightGrey};
+        opacity: 0.9;
+        margin-bottom: 15px;
+        span {
+            color: ${colors.secondaryColor};
+            font-weight: 700;
+        }
+        ${media.thone`font-size:14px;`}
+        ${media.phablet`font-size:13px;`}
+
+     
 
  }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

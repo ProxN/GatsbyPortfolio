@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import MenuDesktop from "./MenuDesktop";
@@ -56,9 +56,7 @@ function Navbar() {
     return () => window.removeEventListener("resize", changeMobile);
   }, []);
 
-  const svgRef  =useRef(null);
-  useEffect(() =>   {  console.log(svgRef);
-  },[])
+
   return (
     <>
       <Helmet>
@@ -68,7 +66,7 @@ function Navbar() {
         <NavWrapper>
           <LogoWrapper>
            <LogoLink>
-             <Logo ref={svgRef} />
+             <Logo  />
            </LogoLink>
           </LogoWrapper>
 

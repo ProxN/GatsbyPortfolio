@@ -13,7 +13,6 @@ const MainContainer = styled(Main)`
 `;
 
 const IndexPage = ({ data }) => {
-  console.log(data);
   return (
     <Layout>
       <MainContainer>

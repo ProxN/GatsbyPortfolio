@@ -61,7 +61,10 @@ const AboutMe = styled(Button)`
 `;
 
 function Hero() {
-  const titleSpring = useSpring({
+
+
+  //Animations 
+  const springAnimation = useSpring({
     config: config.gentle,
     delay: 500,
     to: {
@@ -89,16 +92,15 @@ function Hero() {
   return (
     <HeroContainer>
       <HeroContent>
-        <Title style={titleSpring}>
+        <Title style={springAnimation}>
           Hello,
           <br />
           I'm <span>Ayoub</span>
           <br />
-          {/* A Front-end <span>D</span>eveloper. */}
         </Title>
         <br />
         <SubTitle style={subTitleSpring}>A Front-end developer.</SubTitle>
-        <AboutMe style={titleSpring}>About Me</AboutMe>
+        <AboutMe style={springAnimation}>About Me</AboutMe>
       </HeroContent>
     </HeroContainer>
   );

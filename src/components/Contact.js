@@ -1,5 +1,6 @@
 import React,{useEffect,useRef} from "react";
 import styled from "styled-components";
+import Proptypes  from 'prop-types';
 import { Heading, Section, media, Theme } from "../styles/index";
 import GetIcon from "./Icons/getIcon";
 import {socialLinks,srConfig,mailTo} from "../config/config";
@@ -93,5 +94,7 @@ function Contact({ data }) {
     </ContactContainer>
   );
 }
-
+Contact.prototype = {
+  data: Proptypes.array.isRequired
+};
 export default Contact;

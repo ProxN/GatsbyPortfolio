@@ -25,7 +25,6 @@ import msIcon  from '../images/favicons/ms-icon-144x144.png';
 
 
 function Seo({metadata}){
-    console.log(metadata);
     return(
         <Helmet>
             <html   lang='en' prefix="og: http://ogp.me/ns#"/>

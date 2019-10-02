@@ -28,10 +28,3 @@ function Logo() {
 }
 
 export default Logo;
-{/* <svg
-  width="46"
-  height="49"
-  viewBox="0 0 46 49"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-></svg>; */}

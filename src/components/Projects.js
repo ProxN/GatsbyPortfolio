@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { Heading, Section, media, Theme } from "../styles/index";
+import Proptypes  from 'prop-types';
 import Img from "gatsby-image";
+import { Heading, Section, media, Theme } from "../styles/index";
 import { srConfig } from "../config/config";
 import sr from "../utils/ScrollReveal";
 const { colors, fontSizes } = Theme;
@@ -142,7 +143,7 @@ const Link = styled.a`
   background-color: #0984e3;
   border: 1px dashed #0984e3;
   :hover {
-    color: #d2d2e7;
+    color: ${colors.lightGrey};
     background-color: transparent;
   }
   ${media.thone`font-size:11px;`};
@@ -194,5 +195,7 @@ function Projects({ data }) {
     </ProjectsContainer>
   );
 }
-
+Projects.prototype = {
+  data: Proptypes.array.isRequired
+};
 export default Projects;

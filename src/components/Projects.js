@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import {Heading,Section,media,Theme} from "../styles/index";
+import { Heading, Section, media, Theme } from "../styles/index";
 import Img from "gatsby-image";
-
-const {colors,fontSizes} = Theme;
-
-
+import { srConfig } from "../config/config";
+import sr from "../utils/ScrollReveal";
+const { colors, fontSizes } = Theme;
 
 const ProjectsContainer = styled(Section)`
   position: relative;
@@ -125,7 +124,6 @@ const TechName = styled.span`
     width: 85px;
     margin: 0 5px 10px 5px;
   `};
-
 `;
 
 const Links = styled.div`
@@ -148,21 +146,28 @@ const Link = styled.a`
     background-color: transparent;
   }
   ${media.thone`font-size:11px;`};
-
 `;
 
 function Projects({ data }) {
+  const revealTitle = useRef(null);
+  const revealProject = useRef([]);
+  useEffect(() => {
+    sr.reveal(revealTitle.current, srConfig());
+    revealProject.current.forEach((ref, i) =>
+      sr.reveal(ref, srConfig(i * 100))
+    );
+  }, []);
   return (
     <ProjectsContainer>
-      <Heading>
+      <Heading ref={revealTitle}>
         <span>Recent</span> Work.
       </Heading>
       <ContentContainer>
-        {data.map(({ node }) => {
+        {data.map(({ node }, i) => {
           const { frontmatter, html } = node;
           const { title, demo, source, image, stack } = frontmatter;
           return (
-            <Project>
+            <Project key={title} ref={el => (revealProject.current[i] = el)}>
               <Title>
                 <span></span>
                 {title}
@@ -171,7 +176,7 @@ function Projects({ data }) {
                 <Image fluid={image.childImageSharp.fluid} />
               </ImgConainter>
               <Content>
-                <div dangerouslySetInnerHTML={{ __html: html }} o></div>
+                <div dangerouslySetInnerHTML={{ __html: html }}></div>
                 <TechContainer>
                   {stack.map(tech => (
                     <TechName key={tech}>{tech}</TechName>

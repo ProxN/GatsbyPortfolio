@@ -1,9 +1,9 @@
-import React from "react";
+import React,{useEffect,useRef} from "react";
 import styled from "styled-components";
 import { Heading, Section, media, Theme } from "../styles/index";
 import GetIcon from "./Icons/getIcon";
-import Config from "../config/config";
-
+import {socialLinks,srConfig,mailTo} from "../config/config";
+import sr from '../utils/ScrollReveal';
 const { fontSizes, colors } = Theme;
 
 const ContactContainer = styled(Section)`
@@ -69,18 +69,21 @@ function Contact({ data }) {
   const { frontmatter, html } = data[0].node;
   const { title, email } = frontmatter;
 
+  const revealContainer = useRef(null);
+  useEffect(() => sr.reveal(revealContainer.current,srConfig()));
+
   return (
-    <ContactContainer>
+    <ContactContainer ref={revealContainer}>
       <Heading dangerouslySetInnerHTML={{ __html: title }}></Heading>
       <ContentContainer>
         <div dangerouslySetInnerHTML={{ __html: html }} />
 
         <Email
-          href={Config.email}
+          href={mailTo}
           dangerouslySetInnerHTML={{ __html: email }}
         />
         <SocialContainer>
-          {Config.socialLinks.map(link => (
+          {socialLinks.map(link => (
             <LinkIcon href={link.url} key={link.name}>
               <GetIcon name={link.name} />
             </LinkIcon>

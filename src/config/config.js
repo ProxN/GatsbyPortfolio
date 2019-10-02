@@ -5,7 +5,7 @@ module.exports = {
   siteUrl: "https://ayoubkanoun.com",
   siteLang: "en_us",
   siteKeywords:'ayoub kanoun,front-end developer,web developer,morocoo web web developer,javascript',
-  email:'mailto:idel.ayoubkan@gmail.com',
+  mailTo:'mailto:idel.ayoubkan@gmail.com',
   navLinks: [
     { name: "About Me", url: "#about" },
     { name: "Portfolio", url: "#Portfolio" },
@@ -18,7 +18,7 @@ module.exports = {
   ],
   srConfig: (delay = 200) => ({
     origin:'top',
-    distance:'100px',
+    distance:'50px',
     duration:500,
     easing:'ease-in-out',
     opacity:0,

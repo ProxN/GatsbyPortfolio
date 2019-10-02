@@ -1,5 +1,5 @@
 ---
-title: 'Anime Chart'
+title: 'Anime Chart2'
 demo: 'https://anime-chart.netlify.com/'
 source: 'https://github.com/ProxN/ReactAnimeChart'
 stack: 

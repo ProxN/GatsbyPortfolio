@@ -1,8 +1,9 @@
-import React from "react"
+import React,{useEffect,useRef} from "react"
 import styled from "styled-components"
 import Proptypes  from 'prop-types';
 import {Heading,Section,media,Theme} from "../styles/index";
-
+import sr from '../utils/ScrollReveal';
+import {srConfig} from '../config/config';
 const {fontSizes,colors} = Theme;
 
 
@@ -41,10 +42,15 @@ const TechName = styled.span`
 
 `;
 function About({ data }) {
+
+  const revealContainer = useRef(null);
+  
+  useEffect( () => sr.reveal(revealContainer.current,srConfig()),[]);
+
   const { frontmatter, html } = data[0].node;
   const { title, stack } = frontmatter;
   return (
-    <AboutContainer id='#about'>
+    <AboutContainer id='#about' ref={revealContainer} >
       <Heading dangerouslySetInnerHTML={{ __html: title }}></Heading>
       <ContentContainer>
         <InfoContainer>

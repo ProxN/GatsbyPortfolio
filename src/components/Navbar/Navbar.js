@@ -26,7 +26,7 @@ function Navbar() {
 
   // Show HamburgerToggler on Mobile
   const changeMobile = () => {
-    window.matchMedia("(max-width:40em)").matches
+    window.matchMedia("(max-width:48em)").matches
       ? setIsMobile(true)
       : setIsMobile(false);
   };

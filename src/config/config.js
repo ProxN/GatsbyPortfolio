@@ -15,5 +15,16 @@ module.exports = {
     {name:'Github',url:'https://github.com/ProxN'},
     {name:'Linkedin',url:'https://github.com/ProxN'},
     {name:'Twitter',url:'https://github.com/ProxN'},
-  ]
+  ],
+  srConfig: (delay = 200) => ({
+    origin:'top',
+    distance:'100px',
+    duration:500,
+    easing:'ease-in-out',
+    opacity:0,
+    delay,
+    useDelay:'always',
+    viewFactor:0.3,
+    
+  }),
 }

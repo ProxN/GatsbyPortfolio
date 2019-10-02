@@ -27,7 +27,7 @@ const NavList = styled.ul`
 const NavItem = styled(animated.div)`
   font-size: ${fontSizes.xsmal};
   margin: 0 10px;
-  ${media.tablet`
+  ${media.thone`
     font-size: 18px;
     margin:5px 0;
   `}

@@ -1,10 +1,11 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
-import {GlobalStyle} from "../styles/index";
-import { Navbar, Seo } from "./Index"
-
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql } from "gatsby";
+import { GlobalStyle } from "../styles/index";
+import { Navbar, Seo } from "./Index";
+import Loader from './loader';
 function Layout({ children }) {
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <StaticQuery
       query={graphql`
@@ -21,21 +22,23 @@ function Layout({ children }) {
       render={({ site }) => (
         <>
           <Seo metadata={site.siteMetadata} />
-
           <GlobalStyle />
 
-          <div className="container">
-            <Navbar />
-            {children}
-          </div>
+          {isLoading ? (
+            <Loader finish={() => setIsLoading(false)} />
+          ) : (
+            <div className="container">
+              <Navbar />
+              {children}
+            </div>
+          )}
         </>
       )}
     />
-  )
+  );
 }
 Layout.prototype = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
-
+export default Layout;

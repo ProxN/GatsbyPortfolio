@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import MenuDesktop from "./MenuDesktop";
 import MenuMobile from "./MenuMobile";
 import {Mixins,media} from "../../styles/index";
+import Logo from "../Icons/logo";
 
 
 const NavbarContainer = styled.header`
@@ -17,7 +18,24 @@ const NavWrapper = styled.div`
   ${Mixins.flexBetween};
   ${media.tablet`padding 0 20px;`};
 `;
+const LogoWrapper = styled.div`
 
+  display:flex;
+  align-items:center;
+  justify-content:center;
+`;
+
+const LogoLink = styled.a`
+
+  width:50px;
+  height:50px;
+  svg{
+    height:100%;
+    width:100%;
+    vertical-align: middle;
+  }
+
+`;
 function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -38,6 +56,9 @@ function Navbar() {
     return () => window.removeEventListener("resize", changeMobile);
   }, []);
 
+  const svgRef  =useRef(null);
+  useEffect(() =>   {  console.log(svgRef);
+  },[])
   return (
     <>
       <Helmet>
@@ -45,7 +66,11 @@ function Navbar() {
       </Helmet>
       <NavbarContainer>
         <NavWrapper>
-          <span>logo</span>
+          <LogoWrapper>
+           <LogoLink>
+             <Logo ref={svgRef} />
+           </LogoLink>
+          </LogoWrapper>
 
           {isMobile ? (
             <MenuMobile

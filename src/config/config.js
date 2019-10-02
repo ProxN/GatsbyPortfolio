@@ -8,7 +8,7 @@ module.exports = {
   mailTo:'mailto:idel.ayoubkan@gmail.com',
   navLinks: [
     { name: "About Me", url: "#about" },
-    { name: "Portfolio", url: "#Portfolio" },
+    { name: "Portfolio", url: "#portfolio" },
     { name: "Contact Me", url: "#contact" },
   ],
   socialLinks:[
@@ -16,6 +16,10 @@ module.exports = {
     {name:'Linkedin',url:'https://github.com/ProxN'},
     {name:'Twitter',url:'https://github.com/ProxN'},
   ],
+
+  primaryColor:'#1d1d37',
+  secondaryColor:'#ff6b6b',
+  lightGrey:'#d2d2e7',
   srConfig: (delay = 200) => ({
     origin:'top',
     distance:'50px',

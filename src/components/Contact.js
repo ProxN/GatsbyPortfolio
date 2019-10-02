@@ -73,7 +73,7 @@ function Contact({ data }) {
   useEffect(() => sr.reveal(revealContainer.current,srConfig()));
 
   return (
-    <ContactContainer ref={revealContainer}>
+    <ContactContainer id='contact' ref={revealContainer}>
       <Heading dangerouslySetInnerHTML={{ __html: title }}></Heading>
       <ContentContainer>
         <div dangerouslySetInnerHTML={{ __html: html }} />

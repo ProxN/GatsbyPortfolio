@@ -158,7 +158,7 @@ function Projects({ data }) {
     );
   }, []);
   return (
-    <ProjectsContainer>
+    <ProjectsContainer id='portfolio'>
       <Heading ref={revealTitle}>
         <span>Recent</span> Work.
       </Heading>

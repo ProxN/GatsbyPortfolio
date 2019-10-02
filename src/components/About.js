@@ -50,7 +50,7 @@ function About({ data }) {
   const { frontmatter, html } = data[0].node;
   const { title, stack } = frontmatter;
   return (
-    <AboutContainer id='#about' ref={revealContainer} >
+    <AboutContainer id='about' ref={revealContainer} >
       <Heading dangerouslySetInnerHTML={{ __html: title }}></Heading>
       <ContentContainer>
         <InfoContainer>

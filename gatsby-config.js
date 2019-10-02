@@ -13,11 +13,11 @@ module.exports = {
     {
       resolve:`gatsby-plugin-manifest`,
       options:{
-        name:'AyoubIdelkanoun',
+        name:'AyoubKanoun',
         short_name:'AyoubKanoun',
         start_url:'/',
-        background_color:'#1d1d37',
-        theme_color:'#fff',
+        background_color:config.primaryColor,
+        theme_color:config.lightGrey,
         display: 'minimal-ui'
 
       },

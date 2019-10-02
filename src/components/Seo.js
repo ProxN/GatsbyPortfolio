@@ -3,7 +3,6 @@ import {Helmet} from 'react-helmet';
 import PropTypes from 'prop-types';
 import ogImage from '../images/og.png';
 import config from '../config/config';
-import {Theme} from '../styles/index';
 import favicon from '../images/favicons/favicon.ico';
 import appleIcon57x57 from '../images/favicons/apple-icon-57x57.png';
 import appleIcon60x60 from '../images/favicons/apple-icon-60x60.png';
@@ -72,9 +71,9 @@ function Seo({metadata}){
             <link rel="icon" type="image/png" sizes="96x96" href={favicon96x96}/>
             <link rel="icon" type="image/png" sizes="16x16" href={favicon16x16} />
 
-            <meta name="msapplication-TileColor" content={Theme.colors.lightGrey} />
+            <meta name="msapplication-TileColor" content={config.lightGrey} />
             <meta name="msapplication-TileImage" content={msIcon} />
-            <meta name="theme-color" content={Theme.colors.darkPrimary} />
+            <meta name="theme-color" content={config.primaryColor} />
         </Helmet>
     )
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useTrail, animated } from "react-spring";
 import {Theme,Mixins,media} from '../../styles/index';
 import config from '../../config/config';
-
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 const {fontSizes,colors} = Theme;
 
 
@@ -32,7 +32,7 @@ const NavItem = styled(animated.div)`
     margin:5px 0;
   `}
 `;
-const NavLink = styled.a`
+const NavLink = styled(AnchorLink)`
   text-transform: uppercase;
   font-weight: 700;
   padding: 10px 5px;

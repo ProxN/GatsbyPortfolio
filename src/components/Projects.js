@@ -39,7 +39,7 @@ const Title = styled.h2`
   color: ${colors.lightGrey};
   letter-spacing: 1px;
   position: relative;
-  font-weight: 300;
+  font-weight: 500;
   padding: 10px 30px 0px 30px;
   display: inline-block;
   margin-bottom: 30px;

@@ -3,9 +3,7 @@ export default {
     colors:{
         darkPrimary:'#1d1d37',
         lightPrimary:'#232342',
-
         secondaryColor:'#ff6b6b',
-
         lightGrey:'#d2d2e7',
         darkGrey:'#c6c6e1',
     },

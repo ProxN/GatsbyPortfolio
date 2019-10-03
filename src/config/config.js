@@ -1,11 +1,11 @@
 module.exports = {
-  siteTitle: "Ayoub Kanoun | Front-end Developer",
+  siteTitle: "Ayoub Idelkanoun | Front-end Developer",
   siteDescription:
-    "Ayoub Kanoun is a Front-end developer based in Casablanca, Morocco.",
+    "Ayoub Idelkanoun is a Front-end developer based in Casablanca, Morocco.",
   siteUrl: "https://ayoubkanoun.com",
   siteLang: "en_us",
-  siteKeywords:'ayoub kanoun,front-end developer,web developer,morocoo web web developer,javascript',
-  mailTo:'mailto:idel.ayoubkan@gmail.com',
+  siteKeywords:'ayoub Idelkanoun,front-end developer,web developer,morocoo web web developer,javascript',
+  mailTo:'mailto:kanoundev@gmail.com',
   navLinks: [
     { name: "About Me", url: "#about" },
     { name: "Portfolio", url: "#portfolio" },
@@ -13,8 +13,8 @@ module.exports = {
   ],
   socialLinks:[
     {name:'Github',url:'https://github.com/ProxN'},
-    {name:'Linkedin',url:'https://github.com/ProxN'},
-    {name:'Twitter',url:'https://github.com/ProxN'},
+    {name:'Linkedin',url:'https://www.linkedin.com/in/ayoubidelkanoun/'},
+    {name:'Twitter',url:'#'},
   ],
 
   primaryColor:'#1d1d37',

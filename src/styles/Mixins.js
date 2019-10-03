@@ -1,11 +1,6 @@
 import {css} from 'styled-components';
 import media from './media';
 
-// import Theme from './Theme';
-// const {fontSizes,colors} = Theme;
-
-
-
 const mixins = {
 
     flexBetween:css`

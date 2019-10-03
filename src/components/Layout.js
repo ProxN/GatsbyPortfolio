@@ -4,6 +4,10 @@ import { StaticQuery, graphql } from "gatsby";
 import { GlobalStyle } from "../styles/index";
 import { Navbar, Seo } from "./Index";
 import Loader from './loader';
+
+
+
+
 function Layout({ children }) {
   const [isLoading, setIsLoading] = useState(true);
   return (

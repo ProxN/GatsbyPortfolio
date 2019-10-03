@@ -5,11 +5,12 @@ import MenuDesktop from "./MenuDesktop";
 import MenuMobile from "./MenuMobile";
 import {Mixins,media} from "../../styles/index";
 import Logo from "../Icons/logo";
+import { useSpring, animated,config } from "react-spring";
 
 
-const NavbarContainer = styled.header`
+const NavbarContainer = styled(animated.header)`
   width: 100%;
-  height: 60px;
+  /* height: ${props => props.isMobile ? '70px' : '60px'}; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position:fixed;
   top:0;
@@ -23,7 +24,7 @@ const NavWrapper = styled.div`
   ${Mixins.flexBetween};
   ${media.tablet`padding 0 20px;`};
 `;
-const LogoWrapper = styled.div`
+const LogoWrapper = styled(animated.div)`
 
   display:flex;
   align-items:center;
@@ -61,17 +62,37 @@ function Navbar() {
     return () => window.removeEventListener("resize", changeMobile);
   }, []);
 
+  // animation 
+  const navbarSpring = useSpring({
+    config:{mass: 1, tension: 170, friction: 14},
+    opacity:1,
+    height:isMobile ? '70px' : '60px',
+    from:{
+      opacity:0,
+      height:'0px'
+    }
+  });
+  const logoSpring = useSpring({
+    config:{ mass: 1, tension: 170, friction: 14 },
+    opacity: 1,
+    delay:250,
+    transform: 'translateY(0px)',
+    from: {
+      opacity: 0,
+      transform: 'translateX(-100px)',
+    },
+  })
 
   return (
     <>
       <Helmet>
         <body className={menuOpen ? "blur" : ""} />
       </Helmet>
-      <NavbarContainer>
+      <NavbarContainer style={navbarSpring} isMobile={isMobile}>
         <NavWrapper>
-          <LogoWrapper>
-           <LogoLink>
-             <Logo  />
+          <LogoWrapper  style={logoSpring} >
+           <LogoLink >
+             <Logo   />
            </LogoLink>
           </LogoWrapper>
 

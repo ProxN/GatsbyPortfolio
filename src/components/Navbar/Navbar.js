@@ -11,6 +11,10 @@ const NavbarContainer = styled.header`
   width: 100%;
   height: 60px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position:fixed;
+  top:0;
+  background:rgba(29, 29, 55,.95);
+  z-index:15;
 `;
 const NavWrapper = styled.div`
   padding: 0 50px;

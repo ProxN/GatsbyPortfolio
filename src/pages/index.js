@@ -8,7 +8,6 @@ import Projects from "../components/Projects";
 
 
 const MainContainer = styled(Main)`
-  position: relative;
   ${Mixins.padding}
 `;
 

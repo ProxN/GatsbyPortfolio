@@ -20,7 +20,7 @@ function Logo() {
       <path
           d="M2 42V12H22V22L32.5 12L42 2.5L52 12L62.5 22V12H82.5V42H62.5V32.5L52 42L42 52.5L32.5 42L22 32.5V42H2Z"
           stroke="#ff6b6b"
-          stroke-width="3"
+          strokeWidth="3"
         /> 
       </g>
     </svg>

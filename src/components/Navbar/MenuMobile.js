@@ -43,14 +43,21 @@ function MenuMobile({ menuOpen, toggleMenu }) {
     leave: { opacity: 0, transform: "translateX(100vw)" }
   });
 
+  // 
+  const handleClick = (e) => {
+    console.log(e.target);
+    const isLink = e.target.hasAttribute('href');
+    const isNotMenu = e.target.classList && e.target.classList[0].includes('MenuContainer');
+    if(isLink || isNotMenu) toggleMenu();
+  }
   return (
     <div>
       <HamburgerToggler menuOpen={menuOpen} toggleMenu={toggleMenu} />
-      <MenuContainer menuOpen={menuOpen}>
+      <MenuContainer onClick={handleClick} menuOpen={menuOpen}>
         {DrawerTransistion.map(
           ({ item, key, props }) =>
             item && (
-              <SideDrawer key={key} style={props}>
+              <SideDrawer  key={key} style={props}>
                 <NavLinks menuOpen />
               </SideDrawer>
             )

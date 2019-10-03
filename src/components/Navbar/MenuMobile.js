@@ -47,7 +47,7 @@ function MenuMobile({ menuOpen, toggleMenu }) {
   const handleClick = (e) => {
     console.log(e.target);
     const isLink = e.target.hasAttribute('href');
-    const isNotMenu = e.target.classList && e.target.classList[0].includes('MenuContainer');
+    const isNotMenu = e.target.classList[0].includes('MenuContainer');
     if(isLink || isNotMenu) toggleMenu();
   }
   return (

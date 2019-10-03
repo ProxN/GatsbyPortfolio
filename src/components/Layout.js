@@ -25,7 +25,7 @@ function Layout({ children }) {
           <GlobalStyle />
 
           {isLoading ? (
-            <Loader finish={() => setIsLoading(false)} />
+            <Loader finish={() => setIsLoading(true)} />
           ) : (
             <div className="container">
               <Navbar />

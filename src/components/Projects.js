@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import Proptypes  from 'prop-types';
+import Proptypes from "prop-types";
 import Img from "gatsby-image";
 import { Heading, Section, media, Theme } from "../styles/index";
 import { srConfig } from "../config/config";
@@ -39,7 +39,7 @@ const Title = styled.h2`
   color: ${colors.lightGrey};
   letter-spacing: 1px;
   position: relative;
-  font-weight: 500;
+  font-weight: 700;
   padding: 10px 30px 0px 30px;
   display: inline-block;
   margin-bottom: 30px;
@@ -159,7 +159,7 @@ function Projects({ data }) {
     );
   }, []);
   return (
-    <ProjectsContainer id='portfolio'>
+    <ProjectsContainer id="portfolio">
       <Heading ref={revealTitle}>
         <span>Recent</span> Work.
       </Heading>
@@ -184,8 +184,20 @@ function Projects({ data }) {
                   ))}
                 </TechContainer>
                 <Links>
-                  <Link href={demo}>Demo</Link>
-                  <Link href={source}>Source</Link>
+                  <Link
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    href={demo}
+                  >
+                    Demo
+                  </Link>
+                  <Link
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    href={source}
+                  >
+                    Source
+                  </Link>
                 </Links>
               </Content>
             </Project>
@@ -196,6 +208,6 @@ function Projects({ data }) {
   );
 }
 Projects.prototype = {
-  data: Proptypes.array.isRequired
+  data: Proptypes.array.isRequired,
 };
 export default Projects;

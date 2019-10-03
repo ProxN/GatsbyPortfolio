@@ -40,26 +40,26 @@ function Loader({finish}) {
         const loader = anime.timeline({
             complete:() => finish(),
         });
-        // loader.add({
-        //     targets:'#logo path',
-        //     strokeDashoffset: [anime.setDashoffset, 0],
-        //     easing: 'easeInOutSine',
-        //     duration: 2000,
-        // })
-        // .add({
-        //     targets:'#logo #A',
-        //     duration: 800,
-        //     easing: 'easeInOutQuart',
-        //     opacity: 1,
-        // })
-        // .add({
-        //     targets:'.loader',
-        //     easing:'easeInOutSine',
-        //     duration:300,
-        //     delay:200,
-        //     opacity:0,
-        //     zIndex:-1
-        // })
+        loader.add({
+            targets:'#logo path',
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutSine',
+            duration: 2000,
+        })
+        .add({
+            targets:'#logo #A',
+            duration: 800,
+            easing: 'easeInOutQuart',
+            opacity: 1,
+        })
+        .add({
+            targets:'.loader',
+            easing:'easeInOutSine',
+            duration:300,
+            delay:200,
+            opacity:0,
+            zIndex:-1
+        })
     };
     const [isMounted,setIsMounted] = useState(false);
     

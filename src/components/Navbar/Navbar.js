@@ -5,7 +5,7 @@ import MenuDesktop from "./MenuDesktop";
 import MenuMobile from "./MenuMobile";
 import {Mixins,media} from "../../styles/index";
 import Logo from "../Icons/logo";
-import { useSpring, animated,config } from "react-spring";
+import { useSpring, animated } from "react-spring";
 
 
 const NavbarContainer = styled(animated.header)`

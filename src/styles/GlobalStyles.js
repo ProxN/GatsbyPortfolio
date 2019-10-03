@@ -1,9 +1,76 @@
 import { createGlobalStyle } from "styled-components";
 import Theme from './Theme';
 import media from './media';
+import * as Fonts from './fonts';
+ 
 const { fontSizes, colors } = Theme;
-
 const GlobalStyle = createGlobalStyle`
+
+    @font-face {
+        font-family:'Quicksand';
+        src: url(${Fonts.QuickSandLight}) format('truetype');
+        font-weight:300;
+        font-style:normal;
+        font-display:auto;
+    }
+    @font-face {
+        font-family:'Quicksand';
+        src: url(${Fonts.QuickSandRegular}) format('truetype');
+        font-weight:400;
+        font-style:normal;
+        font-display:auto;
+    }
+    @font-face {
+        font-family:'Quicksand';
+        src: url(${Fonts.QuickSandMedium}) format('truetype');
+        font-weight:500;
+        font-style:normal;
+        font-display:auto;
+    }
+    @font-face {
+        font-family:'Quicksand';
+        src: url(${Fonts.QuickSandSemiBold}) format('truetype');
+        font-weight:600;
+        font-style:normal;
+        font-display:auto;
+        
+    }
+    @font-face {
+        font-family:'Quicksand';
+        src: url(${Fonts.QuickSandBold}) format('truetype');
+        font-weight:700;
+        font-style:normal;
+        font-display:auto;
+    }
+    @font-face {
+        font-family:'Fira Sans';
+        src: url(${Fonts.FiraSansLight}) format('truetype');
+        font-weight:300;
+        font-style:normal;
+        font-display:auto;
+    }
+    @font-face {
+        font-family:'Fira Sans';
+        src: url(${Fonts.FiraSansRegular}) format('truetype');
+        font-weight:400;
+        font-style:normal;
+        font-display:auto;
+    }
+    @font-face {
+        font-family:'Fira Sans';
+        src: url(${Fonts.FiraSansMedium}) format('truetype');
+        font-weight:500;
+        font-style:normal;
+        font-display:auto;
+    }
+    @font-face {
+        font-family:'Fira Sans';
+        src: url(${Fonts.FiraSansBold}) format('truetype');
+        font-weight:700;
+        font-style:normal;
+        font-display:auto;
+        
+    }
 
     html{
         box-sizing:border-box;

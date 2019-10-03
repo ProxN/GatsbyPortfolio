@@ -6,6 +6,7 @@ module.exports = {
   siteLang: "en_us",
   siteKeywords:'ayoub Idelkanoun,front-end developer,web developer,morocoo web web developer,javascript',
   mailTo:'mailto:kanoundev@gmail.com',
+  googleVerification:'88CPTnKcSQeWAFbAbgXWDVUR-38ZzTmT6QPnd2i-7zo',
   navLinks: [
     { name: "About Me", url: "#about" },
     { name: "Portfolio", url: "#portfolio" },

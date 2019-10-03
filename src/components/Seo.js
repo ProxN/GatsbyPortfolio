@@ -31,6 +31,7 @@ function Seo({metadata}){
             <title>{metadata.title}</title>
             <link rel="shortcut icon" href={favicon} />
             <meta name="description" content={metadata.description} />
+            <meta name="google-site-verification" content={config.googleVerification} />
             <meta name="keywords" content={config.siteKeywords} />
             <meta property="og:title" content={metadata.title} />
             <meta property="og:description" content={metadata.description} />

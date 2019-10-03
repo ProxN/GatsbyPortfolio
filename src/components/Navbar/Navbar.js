@@ -13,6 +13,7 @@ const NavbarContainer = styled.header`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position:fixed;
   top:0;
+  filter:none  !important;
   background:rgba(29, 29, 55,.95);
   z-index:15;
 `;

@@ -20,19 +20,19 @@ function Layout({ children }) {
         }
       `}
       render={({ site }) => (
-        <>
+        <div id='root'>
           <Seo metadata={site.siteMetadata} />
           <GlobalStyle />
 
           {isLoading ? (
-            <Loader finish={() => setIsLoading(true)} />
+            <Loader finish={() => setIsLoading(false)} />
           ) : (
             <div className="container">
               <Navbar />
               {children}
             </div>
           )}
-        </>
+        </div>
       )}
     />
   );

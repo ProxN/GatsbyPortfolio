@@ -31,6 +31,9 @@ const GlobalStyle = createGlobalStyle`
     body.blur{
         overflow:hidden;
     }
+    body.blur #root > .container > *{
+        filter:blur(5px);
+    }
     a{
         display:inline-block;
         text-decoration:none;

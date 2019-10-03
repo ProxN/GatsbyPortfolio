@@ -28,6 +28,7 @@ const SideDrawer = styled(animated.div)`
   height: 100%;
   right: 0;
   margin-left: auto;
+  filter:none !important;
   box-shadow: -10px 0px 30px -20px rgb(17, 17, 22);
   ${media.tablet`width:50vw;`};
   ${media.phablet`width:75vw;`};

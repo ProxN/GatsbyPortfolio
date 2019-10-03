@@ -98,7 +98,6 @@ function Hero() {
           I'm <span>Ayoub</span>
           <br />
         </Title>
-        <br />
         <SubTitle style={subTitleSpring}>A Front-end developer.</SubTitle>
         <AboutMe style={springAnimation}>About Me</AboutMe>
       </HeroContent>

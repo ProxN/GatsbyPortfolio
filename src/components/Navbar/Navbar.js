@@ -10,7 +10,6 @@ import { useSpring, animated } from "react-spring";
 
 const NavbarContainer = styled(animated.header)`
   width: 100%;
-  /* height: ${props => props.isMobile ? '70px' : '60px'}; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position:fixed;
   top:0;
@@ -88,7 +87,7 @@ function Navbar() {
       <Helmet>
         <body className={menuOpen ? "blur" : ""} />
       </Helmet>
-      <NavbarContainer style={navbarSpring} isMobile={isMobile}>
+      <NavbarContainer style={navbarSpring}>
         <NavWrapper>
           <LogoWrapper  style={logoSpring} >
            <LogoLink >

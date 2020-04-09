@@ -3,19 +3,18 @@ import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import MenuDesktop from "./MenuDesktop";
 import MenuMobile from "./MenuMobile";
-import {Mixins,media} from "../../styles/index";
+import { Mixins, media } from "../../styles/index";
 import Logo from "../Icons/logo";
 import { useSpring, animated } from "react-spring";
-
 
 const NavbarContainer = styled(animated.header)`
   width: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  position:fixed;
-  top:0;
-  filter:none  !important;
-  background:rgba(29, 29, 55,.95);
-  z-index:15;
+  position: fixed;
+  top: 0;
+  filter: none !important;
+  background: rgba(29, 29, 55, 0.95);
+  z-index: 15;
 `;
 const NavWrapper = styled.div`
   padding: 0 50px;
@@ -24,22 +23,19 @@ const NavWrapper = styled.div`
   ${media.tablet`padding 0 20px;`};
 `;
 const LogoWrapper = styled(animated.div)`
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const LogoLink = styled.a`
-
-  width:50px;
-  height:50px;
-  svg{
-    height:100%;
-    width:100%;
+  width: 50px;
+  height: 50px;
+  svg {
+    height: 100%;
+    width: 100%;
     vertical-align: middle;
   }
-
 `;
 function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
@@ -61,26 +57,26 @@ function Navbar() {
     return () => window.removeEventListener("resize", changeMobile);
   }, []);
 
-  // animation 
+  // animation
   const navbarSpring = useSpring({
-    config:{mass: 1, tension: 170, friction: 14},
-    opacity:1,
-    height:isMobile ? '70px' : '60px',
-    from:{
-      opacity:0,
-      height:'0px'
-    }
-  });
-  const logoSpring = useSpring({
-    config:{ mass: 1, tension: 170, friction: 14 },
+    config: { mass: 1, tension: 170, friction: 14 },
     opacity: 1,
-    delay:250,
-    transform: 'translateY(0px)',
+    height: isMobile ? "70px" : "60px",
     from: {
       opacity: 0,
-      transform: 'translateX(-100px)',
+      height: "0px",
     },
-  })
+  });
+  const logoSpring = useSpring({
+    config: { mass: 1, tension: 170, friction: 14 },
+    opacity: 1,
+    delay: 250,
+    transform: "translateY(0px)",
+    from: {
+      opacity: 0,
+      transform: "translateX(-100px)",
+    },
+  });
 
   return (
     <>
@@ -89,10 +85,10 @@ function Navbar() {
       </Helmet>
       <NavbarContainer style={navbarSpring}>
         <NavWrapper>
-          <LogoWrapper  style={logoSpring} >
-           <LogoLink >
-             <Logo   />
-           </LogoLink>
+          <LogoWrapper style={logoSpring}>
+            <LogoLink href="/">
+              <Logo />
+            </LogoLink>
           </LogoWrapper>
 
           {isMobile ? (

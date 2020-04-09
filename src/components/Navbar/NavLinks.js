@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { useTrail, animated } from "react-spring";
-import {Theme,Mixins,media} from '../../styles/index';
-import config from '../../config/config';
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-const {fontSizes,colors} = Theme;
-
+import { Theme, Mixins, media } from "../../styles/index";
+import config from "../../config/config";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+const { fontSizes, colors } = Theme;
 
 const LinksContainer = styled.div`
   display: flex;
@@ -22,7 +21,6 @@ const NavList = styled.ul`
     flex-direction: column;
     justify-content: center;
   `};
-
 `;
 const NavItem = styled(animated.div)`
   font-size: ${fontSizes.xsmal};
@@ -39,27 +37,24 @@ const NavLink = styled(AnchorLink)`
 `;
 
 function NavLinks({ menuOpen }) {
-
-  const {navLinks} = config;
+  const { navLinks } = config;
   //Animation
-  const LinksAnimations = useTrail(navLinks.length,{
-    config:{ mass: 1, tension: 170, friction: 14 },
-    delay:250,
+  const LinksAnimations = useTrail(navLinks.length, {
+    config: { mass: 1, tension: 170, friction: 14 },
+    delay: 250,
     opacity: 1,
-    transform: 'translateX(0px)',
+    transform: "translateX(0px)",
     from: {
       opacity: 0,
-      transform: 'translateX(100px)',
+      transform: "translateX(100px)",
     },
-  })
+  });
   return (
     <LinksContainer>
       <NavList menuOpen={menuOpen}>
-        {LinksAnimations.map((propsStyle,index) => (
-          <NavItem key={navLinks[index].name} style={propsStyle} >
-            <NavLink href={navLinks[index].url}>
-              {navLinks[index].name}
-            </NavLink>
+        {LinksAnimations.map((propsStyle, index) => (
+          <NavItem key={navLinks[index].name} style={propsStyle}>
+            <NavLink href={navLinks[index].url}>{navLinks[index].name}</NavLink>
           </NavItem>
         ))}
       </NavList>
